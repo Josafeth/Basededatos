@@ -28,8 +28,8 @@
       <p><input id="precio" type="number" maxlength="10" minlength="5" required></p>
       <footer is="mi-footer"></footer>
     </form>
-    <script src="/__/firebase/7.2.0/firebase-app.js"></script>
-    <script src="/__/firebase/7.2.0/firebase-firestore.js"></script>
+    <script src="/__/firebase/7.4.0/firebase-app.js"></script>
+    <script src="/__/firebase/7.4.0/firebase-firestore.js"></script>
     <script src="/__/firebase/init.js"></script>
     <script type="module">
       import { error } from "./lib/util.js";
@@ -37,14 +37,16 @@
       firestore.enablePersistence()
         .catch(error)
         .then(() => vista.addEventListener("submit", guarda));
+
+
       async function guarda(evt) {
         try {
           evt.preventDefault();
           const NOMBRE = vista.nombre.value.trim();
-		  const Marca = vista.Marca.value.trim();
+		      const Marca = vista.Marca.value.trim();
           const FECHA = vista.fecha.value.trim();
           const PRECIO = vista.precio.value.trim();
-		  const modelo = { NOMBRE,Marca,FECHA,PRECIO };
+		      const modelo = { NOMBRE,Marca,FECHA,PRECIO };
           await firestore.collection("Juguetes").add(modelo);
           document.location = "index.html";
         } catch (e) {
