@@ -14,8 +14,8 @@ const ARCHIVOS = [
   "mi-footer.js",
   "Juguetes.html",
   "JuguetesNuevo.html",
-  "__/firebase/7.2.0/firebase-app.js",
-  "__/firebase/7.2.0/firebase-firestore.js",
+  "__/firebase/7.4.0/firebase-app.js",
+  "__/firebase/7.4.0/firebase-firestore.js",
   "__/firebase/init.js",
   '/'
 ];
